@@ -1,0 +1,194 @@
+==33912== Memcheck, a memory error detector
+==33912== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==33912== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==33912== Command: ./main
+==33912== Parent PID: 63203
+==33912== 
+--33912-- 
+--33912-- Valgrind options:
+--33912--    -v
+--33912--    --log-file=valgrind.log
+--33912--    --tool=memcheck
+--33912--    --leak-check=full
+--33912--    --show-mismatched-frees=yes
+--33912--    --track-origins=yes
+--33912-- Contents of /proc/version:
+--33912--   Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+--33912-- 
+--33912-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--33912-- Page sizes: currently 4096, max supported 4096
+--33912-- Valgrind library directory: /home/wesley/anaconda3/envs/download/lib/valgrind
+--33912-- Reading syms from /home/wesley/dsa/b05504066/44/main
+--33912--    object doesn't have a dynamic symbol table
+--33912-- Reading syms from /home/wesley/anaconda3/envs/download/lib/valgrind/memcheck-amd64-linux
+--33912--    object doesn't have a dynamic symbol table
+--33912-- Scheduler: using generic scheduler lock implementation.
+--33912-- Reading suppressions file: /home/wesley/anaconda3/envs/download/lib/valgrind/default.supp
+==33912== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-33912-by-wesley-on-centos77-h1
+==33912== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-33912-by-wesley-on-centos77-h1
+==33912== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-33912-by-wesley-on-centos77-h1
+==33912== 
+==33912== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==33912== don't want to do, unless you know exactly what you're doing,
+==33912== or are doing some strange experiment):
+==33912==   /home/wesley/anaconda3/envs/download/lib/valgrind/../../bin/vgdb --pid=33912 ...command...
+==33912== 
+==33912== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==33912==   /path/to/gdb ./main
+==33912== and then give GDB the following command
+==33912==   target remote | /home/wesley/anaconda3/envs/download/lib/valgrind/../../bin/vgdb --pid=33912
+==33912== --pid is optional if only one valgrind process is running
+==33912== 
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x408178: _int_free (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C6D5: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x4081DF: _int_free (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C6D5: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x409234: _int_malloc (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x40C888: malloc (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3DC: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x43AD69: __strchr_sse42 (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3C0: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created by a stack allocation
+==33912==    at 0x44CF9B: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x43AD7A: __strchr_sse42 (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3C0: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created by a stack allocation
+==33912==    at 0x44CF9B: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== 
+==33912== Process terminating with default action of signal 2 (SIGINT)
+==33912==    at 0x41A740: __read_nocancel (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x437E43: _IO_file_underflow (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x4045AF: _IO_default_uflow (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x42D8F5: _IO_vfscanf (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402AAC: __isoc99_scanf (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x400C3E: main (main.c:404)
+==33912== 
+==33912== HEAP SUMMARY:
+==33912==     in use at exit: 0 bytes in 0 blocks
+==33912==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==33912== 
+==33912== All heap blocks were freed -- no leaks are possible
+==33912== 
+==33912== ERROR SUMMARY: 49 errors from 5 contexts (suppressed: 0 from 0)
+==33912== 
+==33912== 1 errors in context 1 of 5:
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x43AD7A: __strchr_sse42 (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3C0: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created by a stack allocation
+==33912==    at 0x44CF9B: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== 
+==33912== 1 errors in context 2 of 5:
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x43AD69: __strchr_sse42 (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3C0: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created by a stack allocation
+==33912==    at 0x44CF9B: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== 
+==33912== 13 errors in context 3 of 5:
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x409234: _int_malloc (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x40C888: malloc (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C3DC: expand_dynamic_string_token (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C8CC: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== 
+==33912== 17 errors in context 4 of 5:
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x4081DF: _int_free (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C6D5: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== 
+==33912== 17 errors in context 5 of 5:
+==33912== Conditional jump or move depends on uninitialised value(s)
+==33912==    at 0x408178: _int_free (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44C6D5: fillin_rpath (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x44D062: _dl_init_paths (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41CE88: _dl_non_dynamic_init (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41D7F3: __libc_init_first (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C4D: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912==  Uninitialised value was created
+==33912==    at 0x447FEC: brk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x41A9E4: sbrk (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x402373: __libc_setup_tls (in /home/wesley/dsa/b05504066/44/main)
+==33912==    by 0x401C05: (below main) (in /home/wesley/dsa/b05504066/44/main)
+==33912== 
+==33912== ERROR SUMMARY: 49 errors from 5 contexts (suppressed: 0 from 0)

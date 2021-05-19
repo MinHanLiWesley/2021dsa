@@ -1,0 +1,25 @@
+1
+20 22 5
+push 7 1
+push 19 1
+push 10 4
+push 2 1
+push 8 1
+push 13 1
+push 14 2
+push 17 3
+push 18 1
+push 6 1
+push 3 1
+push 15 4
+merge 4 1
+push 4 1
+merge 3 0
+push 12 1
+push 11 1
+push 5 1
+push 9 0
+push 20 1
+push 1 2
+push 16 2
+10 17 14 19 4 18 15 7 9 1 20 5 13 16 12 2 11 3 8 6
